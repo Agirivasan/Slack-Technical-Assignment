@@ -14,8 +14,6 @@ install pip, slackclient, ngrok, flask, & python. Using following steps:
     pip install flask
 ```
 
-Create slack app, events-api, incoming webhook, in slack web app.
-
 # 1: weather_check.py
 Download this file.
 In the slack app, Create a new incoming Webhook. copy the webhook URL from the slack window & paste it in the script
@@ -28,15 +26,26 @@ If there is Cloud in the description it will post a message in #general channel 
 I have used a open source weather API, that is available online. I am concatinating the zipcode entered by user in the api link & getting the weather of that city. Then parsing the data returned by the api to read the weather & city name.
 
 # 2: draw_slashcommand.py
-Download this file & run it. on another terminal window run the ./ngrok http 5000.
-There will be a https port address given in the terminal, copy this address & paste this in the slashcommand request url concatinate it with "/cards". (slack basic info page)
+Download this file & run it. On another terminal window run.
+```
+    ./ngrok http 5000.
+```
+There will be a https port address given in the terminal, copy this address & paste it in the slashcommand request url, concatinate it with "/cards". in edit page of slashcommand.
 The python file runs until stopped using ctrl+C. 
 Now in slack channel use the slash command /drawcard & press enter.
-In the python file, channel id is read.
-Online playing card API is used to draw a playing card randomly & insert it in the channel where the slash command is used.
+While typing the slashcommand auto complete option is available & there is a hint text shown as tool tip about the slashcommand.In the python file, channel id is read(to post the image in the right channel).
+Online playing card API is used to draw a playing card randomly & insert it in the appropriate channel.
 
 # 3: app_reaction.py
-First execute ./ngrok http 5000, Then open another terminal do the following:
-export CLIENT_ID<client ID>, export CLIENT_SECRET<client secret> & export VERIFICATION_TOKEN<verification token> from the basic info page in the bot settings.
-  Now copy the ngrok url & paste it in the request url section concatinated by /listening
+Download the files app_reaction.py, bot.py. Then execute:
+```
+    ./ngrok http 5000
+```   
+Then open another terminal do the following:
+```
+    export CLIENT_ID<client ID>
+    export CLIENT_SECRET<client secret>
+    export VERIFICATION_TOKEN<verification token> 
+```
+All the above mentioned details are available in the "Events Subscriptions" page of the bot app added in the workspace. Copy the ngrok url & paste it in the request url section concatinated by /listening. Slask App would send a challenge parameter, as soon as the end point responds with the challenge value, Green **Verified** is added to the request URL, indicating that the url is valid & verified by slack system.
   
