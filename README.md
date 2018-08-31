@@ -6,7 +6,15 @@ This project has 3 parts in it:
 3. If someone reacts to a message in 1 channel there is a message posted on another stating that someone has reacted with <something> to the message in another channel.
   
 # Pre-quisites:
-install pip, slackclient, ngrok, flask, & python. 
+install pip, slackclient, ngrok, flask, & python. Using following steps:
+
+```
+    pip install slackclient
+    pip install ngrok
+    pip install flask
+
+```
+
 Create slack app, events-api, incoming webhook, in slack web app.
 
 # 1: weather_check.py
