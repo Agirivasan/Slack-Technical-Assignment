@@ -12,16 +12,19 @@ install pip, slackclient, ngrok, flask, & python. Using following steps:
     pip install slackclient
     pip install ngrok
     pip install flask
-
 ```
 
 Create slack app, events-api, incoming webhook, in slack web app.
 
 # 1: weather_check.py
-Download this file & run it.
+Download this file.
+In the slack app, Create a new incoming Webhook. copy the webhook URL from the slack window & paste it in the script
+```
+    web_hook_url = <WEBHOOK URL>
+```
+Save the file & run the script from terminal.
 Input any zipcode in USA. This program checks for the word "Cloud" in the weather description.
 If there is Cloud in the description it will post a message in #general channel about the weather in the city for which you have entered the zipcode.
-For this program I have used the API-Token of the channel using incoming web-hook from slack. 
 I have used a open source weather API, that is available online. I am concatinating the zipcode entered by user in the api link & getting the weather of that city. Then parsing the data returned by the api to read the weather & city name.
 
 # 2: draw_slashcommand.py
