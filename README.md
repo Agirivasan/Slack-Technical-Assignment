@@ -22,3 +22,7 @@ In the python file, channel id is read.
 Online playing card API is used to draw a playing card randomly & insert it in the channel where the slash command is used.
 
 3: app_reaction.py
+First execute ./ngrok http 5000, Then open another terminal do the following:
+export CLIENT_ID<client ID>, export CLIENT_SECRET<client secret> & export VERIFICATION_TOKEN<verification token> from the basic info page in the bot settings.
+  Now copy the ngrok url & paste it in the request url section concatinated by /listening
+  
